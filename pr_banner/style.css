@@ -1,0 +1,373 @@
+@charset "UTF-8";
+
+/* Importação de fonts (google fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+/* Variáveis */
+:root {
+    --background: #0f0f0f;
+    --branco: #fff;
+    --amarelo: #e5b567;
+    --azul: #9cdcfe;
+    --azulEscuro: #05152b;
+    --cinzaClaro: #d6d6d6;
+    --cinza: #858585;
+    --laranja: #e87d3e;
+    --pink: #b05279;
+    --roxo: #9e86c8;
+    --verde: #b4d273;
+}
+
+/* CSS Reset (compatibilizar com todos navegadores) */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Layout >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+    /* 1em = 100% (tamanho padrão) */
+    background-color: var(--background);
+}
+
+.container {
+    /* centralizar o bloco */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.botao {
+    text-decoration: none;
+    color: var(--branco);
+    font-size: 1.3em;
+    font-weight: 700;
+    background-color: var(--laranja);
+    width: 160px;
+    padding: 10px 0px;
+    border: 2px solid var(--branco);
+    border-radius: 25px;
+    align-self: center;
+    margin-top: 30px;
+}
+
+/* Fim do Layout <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+
+/* Smartphone Portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/****** Cabeçalho ******/
+header {
+    height: 65px;
+    /* background-color: #00ffff;*/
+}
+
+#logo img {
+    width: 128px;
+    height: 128px;
+}
+
+#check {
+    display: none;
+}
+
+/* Efeito "deslizar o menu" */
+/* Se check estiver "ticado", crir um estilo para ul*/
+#check:checked~ul {
+    right: 0;
+}
+
+label {
+    font-size: 3em;
+    position: fixed;
+    top: 5px;
+    right: 15px;
+    /* transparência (0 a 1 (100%) */
+    color: rgba(156, 220, 254, 0.9);
+}
+
+nav ul {
+    list-style: none;
+    background-color: rgba(15, 15, 15, 0.9);
+    height: 100vh;
+    position: fixed;
+    top: 65px;
+    right: -50%;
+    width: 50%;
+    transition: all 0.5s;
+}
+
+nav ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--cinza);
+    text-align: right;
+}
+
+nav ul li a {
+    color: var(--azul);
+    /* remover sublinhado */
+    text-decoration: none;
+}
+
+/****** Banner ******/
+main {
+    height: 60vh;    
+    background: url(img/bg1.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+main h1,
+h2 {
+    /* efeito de sombra nos textos */
+    text-shadow: #000 0.05em 0.05em 0.05em;
+}
+
+main h1 {
+    color: var(--amarelo);
+    font-family: "Koulen", sans-serif;
+    font-size: 2.9em;
+}
+
+main h2 {
+    color: var(--branco);
+    font-size: 2.2em;
+    margin-top: 25px;
+    font-weight: 800;
+}
+
+/****** Destaque ******/
+#destaque {
+    background: url(../img/background.png);
+    background-size: cover;
+    background-position: center;
+    padding: 50px 15px;
+    
+}
+
+/* Atenção */
+#destaque .container {
+    flex-direction: column;
+    align-items: center;
+}
+
+#imagemDestaque img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;    
+}
+
+#textoDestaque {
+    color: var(--branco);
+}
+
+#textoDestaque h2 {
+    margin-bottom: 20px;
+}
+
+/* Detalhe do sinal > "ref. ao elemento imediato" */
+#textoDestaque>p {
+    margin-bottom: 15px;
+}
+
+.topicos {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.topicos p {
+    font-weight: 600;
+}
+
+.topicos img {
+    margin-right: 10px;
+}
+
+/* FIm | Smartphone Portrait >>>>>>>>>>>>>>>>>>>>>>>*/
+
+
+/* Smartphone Landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+@media (min-width: 576px) {
+
+    /****** Layout ******/
+    .container {
+        max-width: 540px;
+        /* background-color: #ffff00;*/
+    }
+
+    /****** Cabeçalho ******/
+    nav ul {
+        right: -25%;
+        width: 25%;
+    }
+
+    /****** Banner ******/
+    main {
+        height: 100vh;
+    }
+
+    main h1 {
+        font-size: 3em;
+    }
+
+    /****** Destaque ******/
+    #destaque .container {
+        flex-direction: row;       
+    }
+
+    #imagemDestaque {        
+        margin-right: 50px;
+    }
+
+    #imagemDestaque img {
+        width: 256px;
+        height: 256px;        
+    }
+}
+
+/* Fim | Smartphone Landscape >>>>>>>>>>>>>>>>>>>>>>*/
+
+
+/* Tablet Portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+@media (min-width: 768px) {
+
+    /******* Layout ******/
+    .container {
+        max-width: 720px;
+        /* background-color: #00ff00; */
+    }
+
+    /****** Banner ******/
+    main {
+        height: 80vh;
+    }
+
+    main h1 {
+        font-size: 4em;
+    }
+
+    /****** Destaque ******/
+    #imagemDestaque img {
+        width: 440px;
+        height: 440px;
+    }
+}
+
+/* Fim | Tablet Portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+
+/* Tablet Landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+@media (min-width: 992px) {
+
+    /****** Layout ******/
+    .container {
+        max-width: 960px;
+        /* background-color: #ffa500; */
+    }
+
+    /****** Banner ******/
+    main {
+        height: 70vh;
+    }
+}
+
+/* Fim | Tablet Landscape >>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+
+/* PCs / Notebooks >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+@media (min-width: 1200px) {
+
+    /****** Layout ******/
+    .container {
+        max-width: 1140px;
+        /* background-color: #ff009d; */
+    }
+
+    /****** Cabeçalho ******/
+    header {
+        height: 100px;
+    }
+
+    #logo img {
+        width: 194px;
+        height: 194px;
+    }
+
+    /* Transformação do menu */
+    label {
+        display: none;
+    }
+
+    nav ul {
+        margin-top: 25px;
+        width: 100%;
+        height: auto;
+        position: static;
+        /* remover a cor do background */
+        background-color: transparent;
+    }
+
+    nav ul li {
+        float: left;
+        border: 0;
+    }
+
+    nav ul li a {
+        color: var(--azul);
+    }
+
+    nav ul li a:hover {
+        color: var(--amarelo);
+    }
+
+    /****** Banner ******/
+    main h1 {
+        font-size: 6em;
+    }
+
+    main h2 {
+        font-size: 3em;
+    }
+
+    /****** Destaque ******/
+    #destaque {
+        background-attachment: fixed;
+    }
+}
+
+/* Fim | PCs / Notebooks >>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+
+/* Telas Grandes (FullHD / 4K / SmartTV) >>>>>>>>>>>*/
+@media (min-width: 1400px) {
+
+    /****** Layout ******/
+    .container {
+        max-width: 1360px;
+        /* background-color: #7d5b8c; */
+    }
+
+    /****** Banner ******/
+    main {
+        height: 100vh;
+    }
+
+    main h1 {
+        font-size: 6.5em;
+    }
+
+    main h2 {
+        font-size: 4em;
+    }
+}
+
+/* Fim | Telas Grandes (FullHD / 4K / SmartTV) >>>>>*/

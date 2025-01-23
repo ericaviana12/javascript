@@ -22,14 +22,14 @@
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-/* Saída */
-#slide.slideEsq {
+/* Entrada */
+#slide.slideIn {
     transform: translateX(-100%);
     opacity: 0; /* Transparente */
 }
 
-/* Entrada */
-#slide.slideDir {
+/* Saída */
+#slide.slideOut {
     transform: translateX(0);
     opacity: 1; /* Sólido */
 }

@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Efeito deslizar (transform) com fade (opacity) */
+
+/* Configuração inicial do slide */
+#slide {      
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+/* slide de entrada */
+#slide.slideIn {
+    transform: translateX(-100%); /* 0  translateY */
+    opacity: 0;
+}
+
+/* slide de saída */
+#slide.slideOut {
+    transform: translateX(0); /* translateY */
+    opacity: 1;
+}
