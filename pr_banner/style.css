@@ -127,7 +127,10 @@ main {
     transition: background-image 1s ease-in-out;
 }
 
-/* Adicionar classes para cada imagem de background */
+/*  Adicionar classes para cada imagem de background 
+    A estratégia é substituir essas imagens na linha:
+    background: url(img/bg1.jpg); - do main (linha 119)
+*/
 .bg1 {
     background: url(img/bg1.jpg);
 }
