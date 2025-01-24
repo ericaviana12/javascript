@@ -123,6 +123,21 @@ main {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    /* Efeito de transição */
+    transition: background-image 1s ease-in-out;
+}
+
+/* Adicionar classes para cada imagem de background */
+.bg1 {
+    background: url(img/bg1.jpg);
+}
+
+.bg2 {
+    background: url(img/bg2.jpg);
+}
+
+.bg3 {
+    background: url(img/bg3.jpg);
 }
 
 main h1,
