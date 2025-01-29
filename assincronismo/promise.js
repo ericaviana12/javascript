@@ -14,7 +14,7 @@ const database = {
     admin: {
         usuario: "Administrador",
         senha: "password"
-    };
+    },
 
     prof: {
         usuario: "Leandro Ramos",
@@ -31,3 +31,25 @@ console.log("--------------------")
 login = input.question("login:")
 senha = input.question("senha:")
 console.log("--------------------")
+
+function logar(login, senha) {
+    // Uso de promise (acesso ao "banco de dados")
+    return new Promise((resolv, reject) => {
+        // Simulação de delay no acesso ao banco de dados
+        setTimeout(() => {
+            if (database.hasOwnProperty(login)) {
+                // Verifique se a senha está correta
+                if (database[login].senha === senha) {
+                    resolv("Autenticação bem sucedida. Olá, " + database[login].usuario)
+                } else {
+                    reject("Senha incorreta. Por favor tente novamente.")
+                }
+            } else {
+                reject("Usuário não encontrado. Por favor verifique o login")
+            }
+        }, 2000) // 2000ms = 2s
+    })
+}
+
+// Executar a função logar
+logar(login, senha)
