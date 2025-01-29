@@ -16,6 +16,11 @@ const database = {
         senha: "password"
     },
 
+    erica: {
+        usuario: "Erica Viana",
+        senha: "123@senac"
+    },
+
     prof: {
         usuario: "Leandro Ramos",
         senha: "123456"
