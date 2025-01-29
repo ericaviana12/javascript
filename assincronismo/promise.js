@@ -52,4 +52,11 @@ function logar(login, senha) {
 }
 
 // Executar a função logar
+// No uso de Promise é necessário usar o .then
 logar(login, senha)
+    .then(() => {
+        console.log(message)
+    })
+    .catch((error) => {
+        console.log("Erro de autenticação." + error)
+    })
