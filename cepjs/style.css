@@ -30,3 +30,8 @@ legend {
     color: #fff;
     font-size: 1.5em;
 }
+
+.centralizar {
+    display: block;
+    margin: 0 auto;
+}

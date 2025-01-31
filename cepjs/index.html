@@ -10,6 +10,8 @@
 
 <body>
     <h2>Busca de Endereço por CEP</h2>
+    <img class="centralizar" src="img/cep.jfif" alt="cep">
+ 
     <form>
         <fieldset class="usuario">
             <legend>Identificação do usuário</legend>
@@ -30,23 +32,6 @@
                     required>
             </p>
 
-            <fieldset class="sexo">
-                <legend>Sexo</legend>
-                <p>
-                    <input type="radio" name="sexo" id="cfem">
-                    <!-- O name="sexo" deve ser igual em todos os input type="radio" para habilitar a múltipla escolha limitando em uma única resposta -->
-                    <label for="cfem">Feminino</label>
-                </p>
-                <p>
-                    <input type="radio" name="sexo" id="cmasc">
-                    <label for="cmasc">Masculino</label>
-                </p>
-                <p>
-                    <input type="radio" name="sexo" id="coutros">
-                    <label for="coutros">Outros</label>
-                </p>
-            </fieldset>
-
             <p>
                 <label for="cnasc">Data de nascimento:</label>
                 <input type="date" name="nasc" id="cnasc">
@@ -63,6 +48,14 @@
             <p>
                 <label for="logradouro">Logradouro:</label>
                 <input type="text" id="logradouro">
+            </p>
+            <p>
+                <label for="numero">Número:</label>
+                <input type="text" id="numero">
+            </p>
+            <p>
+                <label for="complemento">Complemento:</label>
+                <input type="text" id="complemento">
             </p>
             <p>
                 <label for="bairro">Bairro:</label>
