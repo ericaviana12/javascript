@@ -16,13 +16,24 @@ function buscarEndereco() {
 function mascaraTelefone(input) {
     // Remove tudo o que não for número
     let valor = input.value.replace(/\D/g, '');
-    
+
     // Aplica a máscara (DDD)XXXXX-XXXX
     if (valor.length <= 2) {
-      input.value = `(${valor}`;
+        input.value = `(${valor}`;
     } else if (valor.length <= 6) {
-      input.value = `(${valor.substring(0, 2)}) ${valor.substring(2)}`;
+        input.value = `(${valor.substring(0, 2)}) ${valor.substring(2)}`;
     } else {
-      input.value = `(${valor.substring(0, 2)}) ${valor.substring(2, 7)}-${valor.substring(7, 11)}`;
+        input.value = `(${valor.substring(0, 2)}) ${valor.substring(2, 7)}-${valor.substring(7, 11)}`;
     }
-  }
+}
+
+function preencherUF(uf) {
+    const selectUF = document.getElementById('uf');
+    selectUF.value = uf;  // Aqui você passa a UF que deseja preencher
+}
+
+// Exemplo de preenchimento automático, com uma UF específica
+window.onload = function () {
+    // Preenchendo a UF automaticamente (exemplo: 'SP' para São Paulo)
+    preencherUF('SP');
+}
