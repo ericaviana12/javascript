@@ -37,3 +37,42 @@ window.onload = function () {
     // Preenchendo a UF automaticamente (exemplo: 'SP' para São Paulo)
     preencherUF('SP');
 }
+
+function validarCPF(input) {
+    var cpf = input.value.replace(/\D/g, ''); // Remove tudo o que não é número
+
+    // Verifica se o CPF tem 11 dígitos e se não é uma sequência de números iguais (ex: 11111111111)
+    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
+        input.setCustomValidity("CPF inválido!"); // Mensagem para CPF inválido
+        return false;
+    }
+
+    // Calcula o primeiro dígito verificador
+    var soma = 0;
+    var peso = 10;
+    for (var i = 0; i < 9; i++) {
+        soma += cpf[i] * peso;
+        peso--;
+    }
+    var resto = soma % 11;
+    var primeiroDigito = (resto < 2) ? 0 : 11 - resto;
+    
+    // Calcula o segundo dígito verificador
+    soma = 0;
+    peso = 11;
+    for (var i = 0; i < 10; i++) {
+        soma += cpf[i] * peso;
+        peso--;
+    }
+    resto = soma % 11;
+    var segundoDigito = (resto < 2) ? 0 : 11 - resto;
+
+    // Verifica se os dois dígitos verificadores calculados são iguais aos informados
+    if (cpf[9] == primeiroDigito && cpf[10] == segundoDigito) {
+        input.setCustomValidity(""); // Remove a mensagem de erro
+        return true;
+    } else {
+        input.setCustomValidity("CPF inválido!"); // Mensagem para CPF inválido
+        return false;
+    }
+}
