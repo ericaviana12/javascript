@@ -45,3 +45,53 @@ delete alunosEM1[1]
 
 // O comando abaixo exibe os elementos do vetor
 console.table(alunosEM1)
+
+// ==================================================
+console.clear()
+
+// Percorrendo um vetor
+let notas = [4, 5, 6, 7, 8]
+console.log(notas)
+console.table(notas)
+
+// Laço for
+for (let i = 0; i < notas.length; i++) {
+    console.log(notas[i])
+}
+
+// Laço forEach (simplificação do for exclusiva para percorrer o vetor)
+notas.forEach((n) => {
+    console.log(n)
+})
+
+// Mapeamento map() -> forEach + Alteração do vetor
+
+// Exemplo 1: Adicionar 1 ponto a mais para cada nota
+let notasAtualizadas = notas.map((na) => {
+    return (na + 1)
+})
+
+console.log(notas)
+console.log(notasAtualizadas)
+
+// Exemplo 2: Conversão de sistema de pontos para letras
+
+/*
+SENAC:
+NA -> Não atendeu (nota menor que 5)
+PA -> Parcialmente atendido (nota entre 5 e 7)
+A -> Atendido (nota maior que 7)
+*/
+
+let notasConvertidas = notas.map((nc) => {
+    if (nc < 5) { // Nota menor que 5
+        return("NA")
+    } else if (nc > 7) {
+        return("A") // Nota maior que 7
+    } else {
+        return("PA")
+    }
+})
+
+console.log(notas)
+console.log(notasConvertidas)
